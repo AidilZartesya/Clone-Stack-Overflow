@@ -19,7 +19,7 @@ class CreateVotesAnswerTable extends Migration
 			$table->integer('user_id')->unsigned();
             $table->timestamps();
 			
-			$table->foreign('anwser_id')
+			$table->foreign('answer_id')
                   ->references('id')
                   ->on('answers');
 				  
