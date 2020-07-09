@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommentanswerTable extends Migration
+class CreateCommentsAnswerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateCommentanswerTable extends Migration
      */
     public function up()
     {
-        Schema::create('commentanswer', function (Blueprint $table) {
+        Schema::create('comments_answer', function (Blueprint $table) {
             $table->increments('id');
             $table->string('comment');
             $table->integer('answer_id')->unsigned();
 			$table->integer('user_id')->unsigned();
             $table->timestamps();
 			
-			$table->foreign('asnwer_id')
+			$table->foreign('answer_id')
                   ->references('id')
                   ->on('answers');
                   

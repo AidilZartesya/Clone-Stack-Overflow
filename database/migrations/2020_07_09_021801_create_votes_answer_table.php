@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVotesanswerTable extends Migration
+class CreateVotesAnswerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateVotesanswerTable extends Migration
      */
     public function up()
     {
-        Schema::create('votesanswer', function (Blueprint $table) {
+        Schema::create('votes_answer', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('category');
 			$table->integer('answer_id')->unsigned();
 			$table->integer('user_id')->unsigned();
             $table->timestamps();
