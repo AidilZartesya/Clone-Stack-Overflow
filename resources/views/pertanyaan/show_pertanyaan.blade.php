@@ -22,7 +22,7 @@
                   </div>
                   <div class="tim-typo">
                     <p>
-                      <span class="tim-note">Description</span>The Life of Material Dashboard</h2>
+                      <span class="tim-note">Description</span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, minima. Quaerat quis delectus consequatur illo tempora impedit adipisci rem earum nisi animi similique, veniam minus beatae dolor, quo debitis ipsum.</h2>
                   </div>
                   <div class="tim-typo">
                     <h5>

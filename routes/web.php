@@ -26,3 +26,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/pertanyaan/show', 'PertanyaanController@show'); // menampilkan detail pertanyaan dengan id
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
