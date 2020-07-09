@@ -21,7 +21,7 @@
   <link rel="icon" type="image/png" href="{{ asset('/ct/img/favicon.png') }}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard Dark Edition by Creative Tim
+    Stack Overflow by Creative Tim
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -42,7 +42,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+          Stack Overflow
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -145,13 +145,35 @@
                   <a class="dropdown-item" href="javascript:void(0)">Another One</a>
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)">
-                  <i class="material-icons">person</i>
-                  <p class="d-lg-none d-md-block">
-                    Account
-                  </p>
-                </a>
+              <li>
+                @guest
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                  </li>
+                  @if (Route::has('register'))
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                  @endif
+                  @else
+                    <li class="nav-item dropdown">
+                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                      </a>
+
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                                  {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          @csrf
+                        </form>
+                      </div>
+                    </li>
+                @endguest
               </li>
             </ul>
           </div>

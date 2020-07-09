@@ -10,4 +10,9 @@ class PertanyaanController extends Controller
     {
     	return view('pertanyaan.form_pertanyaan');
     }
+
+    public function show()
+    {
+    	return view('pertanyaan.show_pertanyaan');
+    }
 }
