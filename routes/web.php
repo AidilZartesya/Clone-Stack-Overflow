@@ -22,3 +22,4 @@ Route::get('/index', function () {
 });
 
 Route::get('/pertanyaan/create', 'PertanyaanController@create');
+Route::get('/pertanyaan/show', 'PertanyaanController@show'); // menampilkan detail pertanyaan dengan id
