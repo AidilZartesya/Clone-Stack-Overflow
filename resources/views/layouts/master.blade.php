@@ -17,8 +17,8 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('ct/img/apple-icon.png') }}">
-  <link rel="icon" type="image/png" href="{{ asset('ct/img/favicon.png') }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('/ct/img/apple-icon.png') }}">
+  <link rel="icon" type="image/png" href="{{ asset('/ct/img/favicon.png') }}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Material Dashboard Dark Edition by Creative Tim
@@ -28,14 +28,14 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
-  <link href=" {{ asset('ct/css/material-dashboard.css?v=2.1.0" rel="stylesheet') }}" />
+  <link href=" {{ asset('/ct/css/material-dashboard.css?v=2.1.0') }}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href=" {{ asset('ct/demo/demo.css" rel="stylesheet') }}" />
+  <link href=" {{ asset('/ct/demo/demo.css')}} " rel="stylesheet"/>
 </head>
 
 <body class="dark-edition">
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="black" data-image="{{asset('ct/img/sidebar-2.jpg') }}">
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="{{asset('/ct/img/sidebar-2.jpg') }}">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -224,22 +224,22 @@
         <li class="header-title">Images</li>
         <li>
           <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="{{ asset('ct/img/sidebar-1.jpg') }}" alt="">
+            <img src="{{ asset('/ct/img/sidebar-1.jpg') }}" alt="">
           </a>
         </li>
         <li class="active">
           <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="{{ asset('ct/img/sidebar-2.jpg') }}" alt="">
+            <img src="{{ asset('/ct/img/sidebar-2.jpg') }}" alt="">
           </a>
         </li>
         <li>
           <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="{{ asset('ct/img/sidebar-3.jpg') }}" alt="">
+            <img src="{{ asset('/ct/img/sidebar-3.jpg') }}" alt="">
           </a>
         </li>
         <li>
           <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="{{ asset('ct/img/sidebar-4.jpg') }}" alt="">
+            <img src="{{ asset('/ct/img/sidebar-4.jpg') }}" alt="">
           </a>
         </li>
         <li class="button-container">
@@ -270,23 +270,23 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src=" {{ asset('ct/js/core/jquery.min.js') }}"></script>
-  <script src=" {{ asset('ct/js/core/popper.min.js') }}"></script>
-  <script src=" {{ asset('ct/js/core/bootstrap-material-design.min.js') }}"></script>
+  <script src=" {{ asset('/ct/js/core/jquery.min.js') }}"></script>
+  <script src=" {{ asset('/ct/js/core/popper.min.js') }}"></script>
+  <script src=" {{ asset('/ct/js/core/bootstrap-material-design.min.js') }}"></script>
   <script src="https://unpkg.com/default-passive-events"></script>
-  <script src=" {{ asset('ct/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+  <script src=" {{ asset('/ct/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js') }}"></script>
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chartist JS -->
-  <script src=" {{ asset('ct/js/plugins/chartist.min.js') }}"></script>
+  <script src=" {{ asset('/ct/js/plugins/chartist.min.js') }}"></script>
   <!--  Notifications Plugin    -->
-  <script src=" {{ asset('ct/js/plugins/bootstrap-notify.js') }}"></script>
+  <script src=" {{ asset('/ct/js/plugins/bootstrap-notify.js') }}"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src=" {{ asset('ct/js/material-dashboard.js?v=2.1.0') }}"></script>
+  <script src=" {{ asset('/ct/js/material-dashboard.js?v=2.1.0') }}"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-  <script src=" {{ asset('ct/demo/demo.js') }}"></script>
+  <script src=" {{ asset('/ct/demo/demo.js') }}"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
