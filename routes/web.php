@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
+
 Route::get('/', function () {
     return view('index');
 });
@@ -28,4 +29,9 @@ Route::get('/pertanyaan/create', 'PertanyaanController@create')->middleware('aut
 Route::post('/pertanyaan', 'PertanyaanController@store');
 Route::get('/pertanyaan/{id}', 'PertanyaanController@show'); // menampilkan detail pertanyaan dengan id
 Route::get('/pertanyaan/{id}/delete','PertanyaanController@delete');
+
+Route::get('/jawaban/{id}','JawabanController@index');
+
+
+
 

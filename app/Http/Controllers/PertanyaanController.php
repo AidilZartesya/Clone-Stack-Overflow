@@ -15,7 +15,7 @@ class PertanyaanController extends Controller
     {
     	// dd($req->all());
     	$pertanyaan = PertanyaanModel::all();
-    	return view('pertanyaan.pertanyaan_index', ['pertanyaan' => $pertanyaan]);
+    	return view('pertanyaan.pertanyaan_index', compact('pertanyaan'));
     }
     
     public function create()
@@ -27,6 +27,7 @@ class PertanyaanController extends Controller
     {
 
         $data = PertanyaanModel::find($id);
+        //dd("10");
     	return view('pertanyaan.show_pertanyaan', compact('data'));
     }
 

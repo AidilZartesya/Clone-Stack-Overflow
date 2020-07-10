@@ -14,16 +14,12 @@
                 </div>
                 <div class="row">
                   <div class="tim-typo">
-                    <h2>
-                      <span class="tim-note">Title</span>Question Title</h1>
-                  </div>
-                  <div class="tim-typo">
                     <p>
-                      <span class="tim-note">Description</span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, minima. Quaerat quis delectus consequatur illo tempora impedit adipisci rem earum nisi animi similique, veniam minus beatae dolor, quo debitis ipsum.</h2>
+                      <span class="tim-note">Description</span>{{$data->question}}</h2>
                   </div>
                   <div class="tim-typo">
                     <h5>
-                      <span class="tim-note">User ID</span>The Life of Material Dashboard</h5>
+                      <span class="tim-note">Answer</span>The Life of Material Dashboard</h5>
                   </div>
                   <div class="tim-typo">
                     <h5>
