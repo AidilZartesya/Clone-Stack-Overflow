@@ -14,7 +14,8 @@
           <th style="width: 20%;">User name</th>
           <th style="width: 120px">Create At</th>
           <th style="width: 120px">Update At</th>
-          <th>Votes</th>
+          <th style="width: 50px">Totals Answers</th>
+          <th style="width: 50px">Votes</th>
           <th style="width: 27%;">Actions</th>
         </tr>
       </thead>
@@ -27,9 +28,11 @@
               <td> {{ $p -> created_at }} </td>
               <td> {{ $p -> updated_at }} </td>
               <td> </td>
+              <td> </td>
               <td>
                 <a href="/pertanyaan/{{$p -> id}}/delete" class="btn btn-danger btn-sm">Delete</a>
                 <a href="/pertanyaan/{{$p -> id}}" class="btn btn-primary btn-sm">View</a>
+                <a href="/jawaban/{{$p -> id}}" class="btn btn-default btn-sm">Answer</a>
 
               </td>
             </tr>
