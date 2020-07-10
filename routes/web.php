@@ -14,17 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
+
+
+Auth::routes();
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/pertanyaan/create', 'PertanyaanController@create')->middleware('auth');
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/pertanyaan/show', 'PertanyaanController@show'); // menampilkan detail pertanyaan dengan id
+Route::get('/pertanyaan','PertanyaanController@index');
 
-Auth::routes();
 
+Route::get('/pertanyaan/create', 'PertanyaanController@create')->middleware('auth');
 Route::post('/pertanyaan', 'PertanyaanController@store');
+Route::get('/pertanyaan/{id}/delete','PertanyaanController@delete');
 

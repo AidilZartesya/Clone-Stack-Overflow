@@ -9,6 +9,13 @@ use App\Models\PertanyaanModel;
 
 class PertanyaanController extends Controller
 {
+    public function index(Request $req)
+    {
+    	// dd($req->all());
+    	$pertanyaan = \App\Models\PertanyaanModel::all();
+    	return view('pertanyaan.pertanyaan_index', ['pertanyaan' => $pertanyaan]);
+    }
+    
     public function create()
     {
     	return view('pertanyaan.form_pertanyaan');
@@ -29,6 +36,13 @@ class PertanyaanController extends Controller
 
         $pertanyaan->save();
 
-        return redirect('/');
+        return redirect('/pertanyaan');
+    }
+
+    public function delete($id)
+    {
+        $pertanyaan = \App\Models\PertanyaanModel::find($id);
+        $pertanyaan->delete($pertanyaan);
+        return redirect('/pertanyaan');
     }
 }

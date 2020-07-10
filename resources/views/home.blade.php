@@ -15,7 +15,12 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
                 </div>
+            </div>
+
+            <div>
+            <a href="/pertanyaan" class="btn btn-primary btn-sm">Lanjutkan Ke Pertanyaan</a>
             </div>
         </div>
     </div>
