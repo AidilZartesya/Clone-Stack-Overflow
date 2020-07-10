@@ -22,7 +22,7 @@ Route::get('/pertanyaan/create', 'PertanyaanController@create')->middleware('aut
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/pertanyaan/show', 'PertanyaanController@show'); // menampilkan detail pertanyaan dengan id
+Route::get('/pertanyaan/{id}', 'PertanyaanController@show'); // menampilkan detail pertanyaan dengan id
 
 Auth::routes();
 

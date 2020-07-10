@@ -1,14 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-
-
-
     <div class="container-fluid">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Question Details</h4>
-              <p class="card-category">Created using Roboto Font Family</p>
+              <h2 class="card-title">{{$data->title}}</h2>
+              <p class="card-category">Asked {{$data->created_at}}</p>
             </div>
             <div class="card-body">
               <div id="typography">
