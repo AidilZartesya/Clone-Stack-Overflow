@@ -22,7 +22,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/pertanyaan','PertanyaanController@index');
 Route::get('/pertanyaan/create', 'PertanyaanController@create')->middleware('auth');
 Route::post('/pertanyaan', 'PertanyaanController@store');
