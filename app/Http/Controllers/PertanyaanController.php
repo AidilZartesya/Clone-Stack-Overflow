@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Models\PertanyaanModel;
+use App\Models\JawabanModel;
+use App\Models\UserModel;
 
 class PertanyaanController extends Controller
 {
@@ -21,15 +23,16 @@ class PertanyaanController extends Controller
     	return view('pertanyaan.form_pertanyaan');
     }
 
-    public function show()
+    public function show($id)
     {
-    	return view('pertanyaan.show_pertanyaan');
+        $data = PertanyaanModel::find($id);
+    	return view('pertanyaan.show_pertanyaan', compact('data'));
     }
 
     public function store()
     {
         $pertanyaan = new PertanyaanModel();
-        
+
         $pertanyaan->title = request('title');
         $pertanyaan->question = request('question');
         $pertanyaan->user_id = Auth::id();
