@@ -25,17 +25,10 @@ class PertanyaanController extends Controller
 
     public function show($id)
     {
-
-<<<<<<< HEAD
         $data_question = PertanyaanModel::find($id);
         $data_answer = JawabanModel::where('question_id', $id)->get();
         
     	return view('pertanyaan.show_pertanyaan', compact('data_question', 'data_answer'));
-=======
-        $data = PertanyaanModel::find($id);
-        //dd("10");
-    	return view('pertanyaan.show_pertanyaan', compact('data'));
->>>>>>> dc88fcdb689c77462b79f5cc9da5daabac9bc3ea
     }
 
 
