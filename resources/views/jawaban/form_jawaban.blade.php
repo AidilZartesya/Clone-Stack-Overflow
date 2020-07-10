@@ -51,7 +51,7 @@
                 </tbody>
               </table>
               <br>
-              <form action="" method="POST">
+              <form action='/jawaban/{{$pertanyaan->id}}' method="POST">
               <div class="form-group">
                 {{ csrf_field()}}
                 <input type="hidden" name="pertanyaan_id" value=""/>

@@ -15,6 +15,20 @@ class JawabanController extends Controller
     {	
         $pertanyaan = PertanyaanModel::find($id);
         $jawaban = JawabanModel::all();
-    	return view('jawaban.form_jawaban', compact('pertanyaan, jawaban'));
+    	return view('jawaban.form_jawaban', compact('pertanyaan', 'jawaban'));
+    }
+
+    public function store($question_id)
+    {
+        $jawaban = new JawabanModel();
+
+        $jawaban->question_id = $question_id;
+        $jawaban->answer = request('isi');
+        $jawaban->user_id = Auth::id();
+        $jawaban->accepted = 0;
+
+        $jawaban->save();
+
+        return redirect('/pertanyaan');
     }
 }

@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-
 Route::get('/', function () {
     return view('index');
 });
@@ -31,7 +30,7 @@ Route::get('/pertanyaan/{id}', 'PertanyaanController@show'); // menampilkan deta
 Route::get('/pertanyaan/{id}/delete','PertanyaanController@delete');
 
 Route::get('/jawaban/{id}','JawabanController@index');
-
-
-
+Route::post('/pertanyaan/komentar/{id}','PertanyaanController@kometar_pertanyaan');
+Route::post('/jawaban/komentar/{id}','PertanyaanController@kometar_jawaban');
+Route::post('/jawaban/{id}','JawabanController@store');
 
