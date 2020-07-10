@@ -35,18 +35,31 @@
                   <tr>
                     <th style="width: 10px">ID</th>
                     <!-- <th style="width: 10px">ID_P</th> -->
-                    <th>Pertanyaan</th>
+                    <th>Question</th>
 
-                    <th style="width: 18%;">Aksi</th>
+                    <th style="width: 18%;">Action</th>
                     <!-- <th style="width: 40px">Aksi</th> -->
                   </tr>
                 </thead>
                 <tbody>
+                  <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                  </tr>
                 
                 </tbody>
               </table>
               <br>
-              
+              <form action="" method="POST">
+              <div class="form-group">
+                {{ csrf_field()}}
+                <input type="hidden" name="pertanyaan_id" value=""/>
+                <label for="inputDescription">Answer here</label>
+                <textarea id="isi" name="isi" class="form-control" rows="4"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
             </div>
             <!-- /.card-body -->
           </div>
