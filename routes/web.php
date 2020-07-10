@@ -26,3 +26,5 @@ Route::get('/pertanyaan/show', 'PertanyaanController@show'); // menampilkan deta
 
 Auth::routes();
 
+Route::post('/pertanyaan', 'PertanyaanController@store');
+
