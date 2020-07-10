@@ -14,20 +14,22 @@ class PertanyaanController extends Controller
     public function index(Request $req)
     {
     	// dd($req->all());
-    	$pertanyaan = \App\Models\PertanyaanModel::all();
+    	$pertanyaan = PertanyaanModel::all();
     	return view('pertanyaan.pertanyaan_index', ['pertanyaan' => $pertanyaan]);
     }
     
     public function create()
     {
-    	return view('pertanyaan.form_pertanyaan');
+        return view('pertanyaan.form_pertanyaan');
     }
 
     public function show($id)
     {
+
         $data = PertanyaanModel::find($id);
     	return view('pertanyaan.show_pertanyaan', compact('data'));
     }
+
 
     public function store()
     {

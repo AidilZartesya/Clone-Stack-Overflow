@@ -29,7 +29,7 @@
               <td> </td>
               <td>
                 <a href="/pertanyaan/{{$p -> id}}/delete" class="btn btn-danger btn-sm">Delete</a>
-                <a href="/jawaban/{{$p -> id}}" class="btn btn-primary btn-sm">View</a>
+                <a href="/pertanyaan/{{$p -> id}}" class="btn btn-primary btn-sm">View</a>
 
               </td>
             </tr>
