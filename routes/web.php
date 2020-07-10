@@ -13,15 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/pertanyaan/create', 'PertanyaanController@create');
+Route::get('/pertanyaan/create', 'PertanyaanController@create')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -29,4 +26,3 @@ Route::get('/pertanyaan/show', 'PertanyaanController@show'); // menampilkan deta
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
