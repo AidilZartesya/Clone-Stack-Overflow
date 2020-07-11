@@ -30,26 +30,10 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table class="table table-bordered">
-                <thead>                  
-                  <tr>
-                    <th style="width: 10px">ID</th>
-                    <!-- <th style="width: 10px">ID_P</th> -->
-                    <th>Question</th>
 
-                    <th style="width: 18%;">Action</th>
-                    <!-- <th style="width: 40px">Aksi</th> -->
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                  </tr>
-                
-                </tbody>
-              </table>
+              <h3>Title : {{ $pertanyaan -> title }}</h3>
+              <h3>Question : {{ $pertanyaan -> question }}</h3>
+              
               <br>
               <form action='/jawaban/{{$pertanyaan->id}}' method="POST">
               <div class="form-group">

@@ -11,7 +11,7 @@
         <tr>
           <th style="width: 10px">#</th>
           <th>Title</th>
-          <th style="width: 20%;">User name</th>
+          <th style="width: 10%;">User ID</th>
           <th style="width: 120px">Create At</th>
           <th style="width: 120px">Update At</th>
           <th style="width: 50px">Totals Answers</th>
@@ -21,10 +21,11 @@
       </thead>
       <tbody>
       @foreach($pertanyaan as $p)
+
             <tr>
-              <td>{{ $loop -> iteration }}</td>
+              <td> {{ $loop -> iteration }} </td>
               <td> {{ $p -> title }} </td>
-              <td> </td>
+              <td> {{ $p -> user_id }}</td>
               <td> {{ $p -> created_at }} </td>
               <td> {{ $p -> updated_at }} </td>
               <td> </td>
@@ -36,7 +37,8 @@
 
               </td>
             </tr>
-            @endforeach
+            
+      @endforeach
       
       
       

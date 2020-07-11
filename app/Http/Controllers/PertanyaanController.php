@@ -15,9 +15,10 @@ class PertanyaanController extends Controller
 {
     public function index(Request $req)
     {
-    	// dd($req->all());
+        // dd($req->all());
+        $users = UserModel::all();
     	$pertanyaan = PertanyaanModel::all();
-    	return view('pertanyaan.pertanyaan_index', compact('pertanyaan'));
+    	return view('pertanyaan.pertanyaan_index', compact('pertanyaan', 'users'));
     }
     
     public function create()
