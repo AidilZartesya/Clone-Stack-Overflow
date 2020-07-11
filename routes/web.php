@@ -27,9 +27,9 @@ Route::get('/pertanyaan','PertanyaanController@index');
 Route::get('/pertanyaan/create', 'PertanyaanController@create')->middleware('auth');
 Route::post('/pertanyaan', 'PertanyaanController@store');
 Route::get('/pertanyaan/{id}', 'PertanyaanController@show'); // menampilkan detail pertanyaan dengan id
-Route::get('/pertanyaan/{id}/delete','PertanyaanController@delete');
+Route::get('/pertanyaan/{id}/delete','PertanyaanController@delete')->middleware('auth');
 
-Route::get('/jawaban/{id}','JawabanController@index');
+Route::get('/jawaban/{id}','JawabanController@index')->middleware('auth');
 Route::post('/pertanyaan/komentar/{id}','PertanyaanController@kometar_pertanyaan');
 Route::post('/jawaban/komentar/{id}','PertanyaanController@kometar_jawaban');
 Route::post('/jawaban/{id}','JawabanController@store');

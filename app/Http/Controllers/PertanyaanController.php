@@ -28,13 +28,19 @@ class PertanyaanController extends Controller
 
     public function show($id)
     {
-        $users = UserModel::find($id);
+        
         $data_question = PertanyaanModel::find($id);
         $data_answer = JawabanModel::where('question_id', $id)->get();
         $comment_question = KomentarPertanyaanModel::where('question_id', $id)->get();
-        //$comment_answer = KomentarJawabanModel::where('answer_id', $id)->get();
-        
-    	return view('pertanyaan.show_pertanyaan', compact('data_question', 'data_answer', 'comment_question', 'users'));
+        //$comment_answer = KomentarJawabanModel::where('answer_id', $data_answer->answer_id)->get();
+        $users = UserModel::find($data_question->user_id);
+        $comment_answer=[];
+        foreach($data_answer as $data){
+            $temp = KomentarJawabanModel::where('answer_id', $data->id)->get();
+            array_push($comment_answer,$temp);   
+        }
+
+    	return view('pertanyaan.show_pertanyaan', compact('data_question', 'data_answer', 'comment_question', 'comment_answer', 'users'));
     }
 
 
@@ -73,7 +79,7 @@ class PertanyaanController extends Controller
 
     public function kometar_jawaban($answer_id)
     {
-        $kometar = new KomentarPertanyaanModel();
+        $kometar = new KomentarJawabanModel();
 
         $kometar->comment = request('comment_answer');
         $kometar->answer_id = $answer_id;

@@ -8,7 +8,7 @@
     <div class="card">
       <div class="card-header card-header-primary">
         <h2 class="card-title">{{$data_question->title}}</h2>
-        <p class="card-category">Asked {{$data_question->created_at}}</p>
+        <p class="card-category">Asked {{$data_question->created_at}} By {{$users->name}}</p>
       </div>
       <div class="card-body">
         <div id="typography" class="ml-3">
@@ -66,10 +66,10 @@
           <div class="card-body">
             <p>Answer {{$loop->iteration}}</p>
             <h3>{{$data->answer}}</h3>
-            <p>{{$data->created_at}}</p>
+            <p>Answered at {{$data->created_at}}</p>
           </div>
 
-          <!-- Tombol Vote Pertanyaan-->
+          <!-- Tombol Vote Jawaban-->
           <table class ="table table-borderless ml-3">
             <thead>
               <tr>
@@ -91,17 +91,19 @@
             </tbody>
           </table>
 
-          <!-- List Komentar Pertanyaan -->
+          <!-- List Komentar Jawaban -->
           <h5 class="text-light ml-3"><strong>Comment</strong></h5>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
+            @foreach($comment_answer[$loop->index] as $ca)
+              <li class="list-group-item">{{$ca->comment}}</li>
+            @endforeach
           </ul>
 
           <!-- Form Komentar Jawaban -->
           <form class="form-inline ml-3" action="/jawaban/komentar/{{$data->id}}" method="POST">
             <div class="form-group mb-2">
               {{ csrf_field()}}
-              <input type="text" class="form-control" id="comment_question" name="comment_question"><br>
+              <input type="text" class="form-control" id="comment_asnwer" name="comment_answer"><br>
             </div>
             <button type="submit" class="btn btn-secondary ">Submit</button>
           </form>
