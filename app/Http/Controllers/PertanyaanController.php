@@ -28,12 +28,13 @@ class PertanyaanController extends Controller
 
     public function show($id)
     {
+        $users = UserModel::find($id);
         $data_question = PertanyaanModel::find($id);
         $data_answer = JawabanModel::where('question_id', $id)->get();
         $comment_question = KomentarPertanyaanModel::where('question_id', $id)->get();
         //$comment_answer = KomentarJawabanModel::where('answer_id', $id)->get();
         
-    	return view('pertanyaan.show_pertanyaan', compact('data_question', 'data_answer', 'comment_question'));
+    	return view('pertanyaan.show_pertanyaan', compact('data_question', 'data_answer', 'comment_question', 'users'));
     }
 
 

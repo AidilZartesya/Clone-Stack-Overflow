@@ -64,7 +64,8 @@
       <div class="container-fluid">
         <div class="card">
           <div class="card-body">
-            <h4>{{$data->answer}}</h4>
+            <p>Answer {{$loop->iteration}}</p>
+            <h3>{{$data->answer}}</h3>
             <p>{{$data->created_at}}</p>
           </div>
 
