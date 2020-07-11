@@ -20,6 +20,7 @@
         </tr>
       </thead>
       <tbody>
+
       @foreach($pertanyaan as $p)
 
             <tr>
@@ -39,7 +40,6 @@
             </tr>
             
       @endforeach
-      
       
       
       </tbody>

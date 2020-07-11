@@ -65,6 +65,7 @@
         <div class="card">
           <div class="card-body">
             <h4>{{$data->answer}}</h4>
+            <p>{{$data->created_at}}</p>
           </div>
 
           <!-- Tombol Vote Pertanyaan-->
