@@ -32,7 +32,6 @@ class PertanyaanController extends Controller
         $data_question = PertanyaanModel::find($id);
         $data_answer = JawabanModel::where('question_id', $id)->get();
         $comment_question = KomentarPertanyaanModel::where('question_id', $id)->get();
-        //$comment_answer = KomentarJawabanModel::where('answer_id', $data_answer->answer_id)->get();
         $users = UserModel::find($data_question->user_id);
         $comment_answer=[];
         foreach($data_answer as $data){
@@ -59,7 +58,26 @@ class PertanyaanController extends Controller
 
     public function delete($id)
     {
-        $pertanyaan = \App\Models\PertanyaanModel::find($id);
+        // Delete Komentar Pertanyaan
+        $komentar_pertanyaan = KomentarPertanyaanModel::where('question_id', $id)->get();
+        foreach($komentar_pertanyaan as $temp){
+            $temp->delete($temp);
+        }
+        
+        // Delete Jawaban dan Komentar Jawaban
+        $jawaban = JawabanModel::where('question_id', $id)->get();
+        foreach($jawaban as $temp){
+            $komentar_jawaban = KomentarJawabanModel::where('answer_id', $temp->id)->get();
+            // Delete Komentar Jawaban
+            foreach($komentar_jawaban as $dump){
+                $dump->delete($dump);
+            }
+            // Delete Jawaban
+            $temp->delete($temp);
+        }
+        
+        // Delete Pertanyaan
+        $pertanyaan = PertanyaanModel::find($id);
         $pertanyaan->delete($pertanyaan);
         return redirect('/pertanyaan');
     }
